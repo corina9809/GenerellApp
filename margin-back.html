@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="sidebar_menu.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <script src="https://use.fontawesome.com/1e577437ce.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+</head>
+
+<body>
+<div id="wrapper" class="toggled-1">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav nav-stacked" id="menu">
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-dashboard fa-stack-1x "></i></span>Dashboard</a>
+            </li>
+            <li>
+                <a class="active" href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-calculator fa-stack-1x "></i></span>Calculator</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-rocket fa-stack-1x "></i></span>MAX</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-line-chart fa-stack-1x "></i></span>Analytics</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-envelope fa-stack-1x "></i></span>Contact</a>
+            </li>
+            <li>
+                <a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-comments fa-stack-1x "></i></span>Chat</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+</div>
+<div id="wrapper1" class="toggled-2">
+    <nav class="navbar navbar-default no-margin shadow">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+
+                <li><a href="index-pricing.html">Pricing</a></li>
+                <li class="active"><a href="entry-margins.html">Margins</a></li>
+                <li><a href="#">Products</a></li>
+            </ul>
+            <!-- /.navbar-top-left -->
+            <a class="navbar-brand" href="index.html"></a>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="fat-menu" class="dropdown"> <a href="#" class="dropdown-toggle center" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o"></i><sup><span class="badge">2</span></sup></a>
+                    <ul class="dropdown-menu" aria-labelledby="drop3">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+                <li id="fat-menu" class="dropdown"> <a href="#" class="dropdown-toggle center" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-o"></i></a>
+                    <ul class="dropdown-menu" aria-labelledby="drop3">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- /.navbar-top-right -->
+        </div>
+        <!-- /.navbar-collapse -->
+
+    </nav>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid xyz">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-8 margin-20">
+                    <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                        <option>A Customer</option>
+                        <option>B Customer</option>
+                        <option>C Customer</option>
+                        <option>D Customer</option>
+                        <option>E Customer</option>
+                        <option>F Customer</option>
+                        <option>G Customer</option>
+                        <option>H Customer</option>
+                        <option>I Customer</option>
+                    </select>
+                </div>
+                <!-- /.col-lg-4 -->
+                <div class="col-lg-2 col-md-2 col-sm-4 margin-20">
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Entry
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Interior
+                    </label>
+                </div>
+                <!-- /.col-lg-2 -->
+                <div class="col-lg-3 col-md-4 col-sm-12 col-lg-offset-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                        <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+                    </div>
+                    <!-- /input-group -->
+                </div>
+                <!-- /.col-lg-3 -->
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-7 border-right">
+                                    <div class="col-lg-12 no-padding-lr">
+                                        <p>Textures: <a href="#">Reset all Filter</a></p>
+                                    </div>
+                                    <div class="col-lg-12 no-padding-lr filter">
+                                        <button type="button" class="btn btn-default">Black Walnut</button>
+                                        <button type="button" class="btn btn-default">Cherry</button>
+                                        <button type="button" class="btn btn-default">Fir</button>
+                                        <button type="button" class="btn btn-default">Mahogany</button>
+                                        <button type="button" class="btn btn-default">Mah. Fire</button>
+                                        <button type="button" class="btn btn-default">Mah. No Plank</button>
+                                        <button type="button" class="btn btn-default">Mah. No Plank Fire</button>
+                                        <button type="button" class="btn btn-default">Mah. Plank</button>
+                                        <button type="button" class="btn btn-default">Mah. Plank Fire</button>
+                                        <button type="button" class="btn btn-default">Oak</button>
+                                        <button type="button" class="btn btn-default">Oak Fire</button>
+                                        <button type="button" class="btn btn-default">Smooth</button>
+                                        <button type="button" class="btn btn-default">Smooth Fire</button>
+                                        <button type="button" class="btn btn-default">Spanish Cedar</button>
+                                        <button type="button" class="btn btn-default">Texture</button>
+                                        <button type="button" class="btn btn-default">Texture Fire</button>
+                                    </div>
+
+                                    <!-- /Filter -->
+                                </div>
+                                <!-- /.col-lg-7 -->
+                                <div class="col-lg-4">
+                                    <div class="col-lg-12 no-padding-lr">
+                                        <p>Type: <a href="#">Reset all Filter</a></p>
+                                    </div>
+                                    <div class="col-lg-12 no-padding-lr filter">
+                                        <button type="button" class="btn btn-default">Door</button>
+                                        <button type="button" class="btn btn-default">Sidelite</button>
+                                        <button type="button" class="btn btn-default">Transom</button>
+                                    </div>
+                                </div>
+                                <!-- /.col-lg-4 -->
+                                <div class="col-lg-1">
+                                    <div class="col-lg-12 no-padding-lr">
+                                        <p>Items</p>
+                                    </div>
+                                    <div class="col-lg-12 no-padding-lr">
+                                        <!-- Select -->
+                                        <div class="form-group">
+                                            <select class="form-control" id="sel1">
+                                                <option>25</option>
+                                                <option>50</option>
+                                                <option>200</option>
+                                                <option>500</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.col-lg-1 -->
+                            </div>
+                            <!-- Table -->
+                            <table class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Family
+                                        <div class="box pull-right">
+                                            <div class="container-2">
+                                                <span class="icon"><i class="fa fa-search"></i></span>
+                                                <input type="search" id="search" />
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th class="center" colspan="3">Family Multipliers</th>
+                                    <th class="center" colspan="2">Decorative</th>
+                                    <th class="center" colspan="2">Clear</th>
+                                    <th class="center" colspan="2">Opaque</th>
+                                </tr>
+                                <tr>
+                                    <th class="col-md-3 no-border-top"></th>
+                                    <th class="col-md-1 center subthead">Deco</th>
+                                    <th class="col-md-1 center subthead">Clear</th>
+                                    <th class="col-md-1 center subthead">Opaque</th>
+                                    <th class="col-md-1 center subthead">Dealer</th>
+                                    <th class="col-md-1 center subthead">Distributor</th>
+                                    <th class="col-md-1 center subthead">Dealer</th>
+                                    <th class="col-md-1 center subthead">Distributor</th>
+                                    <th class="col-md-1 center subthead">Dealer</th>
+                                    <th class="col-md-1 center subthead">Distributor</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr data-toggle="collapse" data-target="#AvantGuard" class="accordion-toggle no-bg">
+                                    <td class="col-md-3">AvantGuard<button class="btn btn-default btn-xs pull-right"><span class="fa fa-caret-down"></span></button></td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="10" class="hiddenRow no-padding">
+                                        <div class="accordian-body collapse" id="AvantGuard">
+                                            <table class="table table-striped table-bordered">
+                                                <tbody>
+                                                <tr data-toggle="collapse" data-target="#AvantGuard" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#AvantGuard" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#AvantGuard" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#AvantGuard" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#AvantGuard" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-toggle="collapse" data-target="#Barrington" class="accordion-toggle no-bg">
+                                    <td class="col-md-3">Barrington<button class="btn btn-default btn-xs pull-right"><span class="fa fa-caret-down"></span></button></td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="10" class="hiddenRow no-padding">
+                                        <div class="accordian-body collapse" id="Barrington">
+                                            <table class="table table-striped table-bordered">
+                                                <tbody>
+                                                <tr data-toggle="collapse" data-target="#Barrington" class="accordion-toggle">
+                                                    <td class="col-md-3">Barrington SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#Barrington" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#Barrington" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#Barrington" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#Barrington" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr data-toggle="collapse" data-target="#BarringtonCraftsman" class="accordion-toggle no-bg">
+                                    <td class="col-md-3">Barrington Craftsman<button class="btn btn-default btn-xs pull-right"><span class="fa fa-caret-down"></span></button></td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center">3.333</td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="10" class="hiddenRow no-padding">
+                                        <div class="accordian-body collapse" id="BarringtonCraftsman">
+                                            <table class="table table-striped table-bordered">
+                                                <tbody>
+                                                <tr data-toggle="collapse" data-target="#BarringtonCraftsman" class="accordion-toggle">
+                                                    <td class="col-md-3">Barrington SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#BarringtonCraftsman" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#BarringtonCraftsman" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#BarringtonCraftsman" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr data-toggle="collapse" data-target="#BarringtonCraftsman" class="accordion-toggle">
+                                                    <td class="col-md-3">AvantGuard SC</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center">3.333</td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                    <td class="col-md-1 center"><i class="fa fa-plus-square-o" aria-hidden="true"></i> 40% <i class="fa fa-minus-square-o" aria-hidden="true"></i></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="pull-right">
+                                <button type="button" class="btn btn-primary"><i class="fa fa-lock" aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-primary active"><i class="fa fa-unlock" aria-hidden="true"></i></button>
+                                <button type="button" class="btn btn-danger">Cancel</button>
+                                <button type="button" class="btn btn-success">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <div class="row">
+                <div class="col-lg-12 center">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- /.row slab -->
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<script src="sidebar_menu.js"></script>
+</body>
+
+</html>

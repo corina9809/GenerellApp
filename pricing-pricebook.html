@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link data-require="bootstrap@3.3.7" data-semver="3.3.7" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script data-require="bootstrap@3.3.7" data-semver="3.3.7" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="custom.css" />
+    <script src="https://use.fontawesome.com/1e577437ce.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</head>
+
+<body>
+<div id="wrapper">
+    <!-- navigation -->
+    <nav class="navbar navbar-default no-margin shadow">
+
+        <!-- navbar-top-left -->
+        <ul class="nav navbar-nav navbar-top">
+            <li id="fat-menu">
+                <a href="portal.html" class="center" role="button" aria-haspopup="false" aria-expanded="false"><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+            </li>
+            <li class="active" id="fat-menu">
+                <a href="pricing-slab.html" class="center" role="button" aria-haspopup="false" aria-expanded="false"><i class="fa fa-calculator"></i><span>MPrice</span></a>
+            </li>
+            <li id="fat-menu">
+                <a href="export.html" class="center" role="button" aria-haspopup="false" aria-expanded="false"><i class="fa fa-rocket"></i><span>Export</span></a>
+            </li>
+            <li id="fat-menu">
+                <a href="user-maintenance.html" class="center" role="button" aria-haspopup="false" aria-expanded="false"><i class="fa fa-users"></i><span>Users</span></a>
+            </li>
+            <li id="fat-menu">
+                <a href="#" class="center" role="button" aria-haspopup="false" aria-expanded="false"><i class="fa fa-line-chart"></i><span>Analytics</span></a>
+            </li>
+            <li id="fat-menu">
+                <a href="#" class="center" role="button" aria-haspopup="false" aria-expanded="false"><i class="fa fa-envelope"></i><span>Contact</span></a>
+            </li>
+            <li id="fat-menu">
+                <a href="#" class="center" role="button" aria-haspopup="false" aria-expanded="false"><i class="fa fa-comments"></i><span>Chat</span></a>
+            </li>
+        </ul>
+        <!-- /navbar-top-left -->
+
+        <a class="navbar-brand" href="index.html"></a>
+        <ul class="nav navbar-nav navbar-right">
+            <li id="fat-menu" class="dropdown"> <a href="#" class="dropdown-toggle" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o"></i><sup><span class="badge">2</span></sup></a>
+                <ul class="dropdown-menu" aria-labelledby="drop3">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                </ul>
+            </li>
+            <li id="fat-menu" class="dropdown"> <a href="#" class="dropdown-toggle" id="drop3" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-o"></i></a>
+                <ul class="dropdown-menu" aria-labelledby="drop3">
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- /.navbar-top-right -->
+    </nav>
+    <!-- /navigation -->
+
+    <!-- calculator navigation -->
+    <nav class="navbar navbar-default no-margin">
+        <div class="container-fluid no-padding">
+            <div class="col-md-8 no-padding">
+                <ul class="nav navbar-nav">
+                    <li><a href="pricing-slab.html">Cost</a></li>
+                    <li><a href="entry-margins.html">Margins</a></li>
+                    <li><a href="slab-stock.html">Products</a>
+                    </li>
+                    <li class="active"><a href="pricing-pricebook.html">Price Book</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                    <option>---select a customer---</option>
+                    <option>A Customer</option>
+                    <option>B Customer</option>
+                    <option>C Customer</option>
+                    <option>D Customer</option>
+                    <option>E Customer</option>
+                    <option>F Customer</option>
+                    <option>G Customer</option>
+                    <option>H Customer</option>
+                    <option>I Customer</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+    <!-- /calculator navigation -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <!--modal glas design-->
+            <div class="modal fade glas-design" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" style="display: none;">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span></button>
+                            <h4 class="modal-title" id="myLargeModalLabel">Filter - Glas Design</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <!-- <h4>Filter Group 1</h4> -->
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- <h4>Filter Group 2</h4> -->
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- <h4>Filter Group 3</h4> -->
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- <h4>Filter Group 4</h4> -->
+                                    <form>
+                                        <div class="form-group">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"> Check me out
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/modal glas design-->
+
+        <!--modal glas grid-->
+        <div class="modal fade glas-grid" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span></button>
+                        <h4 class="modal-title" id="myLargeModalLabel">Filter - Glas Grid Type</h4>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-default">Filter 1</button>
+                        <button type="button" class="btn btn-default">Filter 2</button>
+                        <button type="button" class="btn btn-default">Filter 3</button>
+                        <button type="button" class="btn btn-default">Filter 4</button>
+                        <button type="button" class="btn btn-default">Filter 5</button>
+                        <button type="button" class="btn btn-default">Filter 6</button>
+                        <button type="button" class="btn btn-default">Filter 7</button>
+                        <button type="button" class="btn btn-default">Filter 8</button>
+                        <button type="button" class="btn btn-default">Filter 9</button>
+                        <button type="button" class="btn btn-default">Filter 10</button>
+                        <button type="button" class="btn btn-default">Filter 11</button>
+                        <button type="button" class="btn btn-default">Filter 12</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/modal glas grid-->
+
+        <!--modal glas lite-->
+        <div class="modal fade glas-lite" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span></button>
+                        <h4 class="modal-title" id="myLargeModalLabel">Filter - Glass Lite Count</h4>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-default">Filter 1</button>
+                        <button type="button" class="btn btn-default">Filter 2</button>
+                        <button type="button" class="btn btn-default">Filter 3</button>
+                        <button type="button" class="btn btn-default">Filter 4</button>
+                        <button type="button" class="btn btn-default">Filter 5</button>
+                        <button type="button" class="btn btn-default">Filter 6</button>
+                        <button type="button" class="btn btn-default">Filter 7</button>
+                        <button type="button" class="btn btn-default">Filter 8</button>
+                        <button type="button" class="btn btn-default">Filter 9</button>
+                        <button type="button" class="btn btn-default">Filter 10</button>
+                        <button type="button" class="btn btn-default">Filter 11</button>
+                        <button type="button" class="btn btn-default">Filter 12</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/modal glas lite-->
+
+        <!--modal sub family-->
+        <div class="modal fade sub-family" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span></button>
+                        <h4 class="modal-title" id="myLargeModalLabel">Filter - Sub Family</h4>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-default">Filter 1</button>
+                        <button type="button" class="btn btn-default">Filter 2</button>
+                        <button type="button" class="btn btn-default">Filter 3</button>
+                        <button type="button" class="btn btn-default">Filter 4</button>
+                        <button type="button" class="btn btn-default">Filter 5</button>
+                        <button type="button" class="btn btn-default">Filter 6</button>
+                        <button type="button" class="btn btn-default">Filter 7</button>
+                        <button type="button" class="btn btn-default">Filter 8</button>
+                        <button type="button" class="btn btn-default">Filter 9</button>
+                        <button type="button" class="btn btn-default">Filter 10</button>
+                        <button type="button" class="btn btn-default">Filter 11</button>
+                        <button type="button" class="btn btn-default">Filter 12</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/modal sub family-->
+
+        <!--modal door style-->
+        <div class="modal fade door-style" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span></button>
+                        <h4 class="modal-title" id="myLargeModalLabel">Filter - Door Style</h4>
+                    </div>
+                    <div class="modal-body">
+                        <button type="button" class="btn btn-default">Filter 1</button>
+                        <button type="button" class="btn btn-default">Filter 2</button>
+                        <button type="button" class="btn btn-default">Filter 3</button>
+                        <button type="button" class="btn btn-default">Filter 4</button>
+                        <button type="button" class="btn btn-default">Filter 5</button>
+                        <button type="button" class="btn btn-default">Filter 6</button>
+                        <button type="button" class="btn btn-default">Filter 7</button>
+                        <button type="button" class="btn btn-default">Filter 8</button>
+                        <button type="button" class="btn btn-default">Filter 9</button>
+                        <button type="button" class="btn btn-default">Filter 10</button>
+                        <button type="button" class="btn btn-default">Filter 11</button>
+                        <button type="button" class="btn btn-default">Filter 12</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/modal sub family-->
+
+        <!--modal smartpartnumber-->
+        <div class="modal fade smartpartnumber" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span></button>
+                        <h4 class="modal-title" id="myLargeModalLabel">Smart Part Number - <strong>FG-HFT-DR-217-010-CC-C-01-1L-X-1-D-D-2-3C-68-210-X-WE</strong></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><kbd>FG</kbd> - Door Material</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>HFT</kbd> - Door Subfamily</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>DR</kbd> - Door/Sidelite Indicator</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>217</kbd> - Glass Shape/Cut-Out</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>010</kbd> - Glass Design/Style</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>CC</kbd> - Glass Category</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>C</kbd> - Glass Type</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>01</kbd> - Number of Lites</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>1L</kbd> - Lite Configuration</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>X</kbd> - Internal Grid Type</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>1</kbd> - Glass Thickness</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>D</kbd> - Masonite Default Glass Frame</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>D</kbd> - Dentil Shelf</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>2</kbd> - Product Panels</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>3C</kbd> - Source Slab Panels</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>68</kbd> - Height in FeetInches</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>210</kbd> - Width in FeetInches</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>X</kbd> - Fire Rating</p>
+                            </div>
+                            <div class="col-md-12">
+                                <p><kbd>WE</kbd> - Edge Construction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/modal smartpartnumber-->
+
+        <!--modal smartpartnumber-->
+        <div class="modal fade smartpartnumber2" role="dialog" tabindex="-1" aria-labelledby="myLargeModalLabel" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span></button>
+                        <h4 class="modal-title" id="myLargeModalLabel">Smart Part Number - <strong>FG-HFT-DR-217-010-CC-C-01-1L-X-1-D-D-2-3C-68-210-X-WE</strong></h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><kbd>FG</kbd> - Door Material</p>
+                                <p><kbd>HFT</kbd> - Door Subfamily</p>
+                                <p><kbd>DR</kbd> - Door/Sidelite Indicator</p>
+                                <p><kbd>217</kbd> - Glass Shape/Cut-Out</p>
+                                <p><kbd>010</kbd> - Glass Design/Style</p>
+                                <p><kbd>CC</kbd> - Glass Category</p>
+                                <p><kbd>C</kbd> - Glass Type</p>
+                                <p><kbd>01</kbd> - Number of Lites</p>
+                                <p><kbd>1L</kbd> - Lite Configuration</p>
+                                <p><kbd>X</kbd> - Internal Grid Type</p>
+                                <p><kbd>1</kbd> - Glass Thickness</p>
+                                <p><kbd>D</kbd> - Masonite Default Glass Frame</p>
+                                <p><kbd>D</kbd> - Dentil Shelf</p>
+                                <p><kbd>2</kbd> - Product Panels</p>
+                                <p><kbd>3C</kbd> - Source Slab Panels</p>
+                                <p><kbd>68</kbd> - Height in FeetInches</p>
+                                <p><kbd>210</kbd> - Width in FeetInches</p>
+                                <p><kbd>X</kbd> - Fire Rating</p>
+                                <p><kbd>WE</kbd> - Edge Construction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/modal smartpartnumber-->
+
+
+        <!--/modal smartpartnumber-->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4 clearfix">
+                                <!-- Select -->
+                                <div class="pull-left">
+                                    <p class="text-align">Items/page:&shy;</p>
+                                </div>
+                                <div class="pull-left">
+                                    <div class="form-group">
+                                        <select class="form-control" id="sel1">
+                                            <option>25</option>
+                                            <option>50</option>
+                                            <option>200</option>
+                                            <option>500</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- /Select -->
+                            </div>
+                            <div class="col-md-4">
+                                <div class="container-1">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                    <input type="search" id="search" placeholder="search..." />
+                                </div>
+                            </div>
+                            <div class="col-md-4 clearfix">
+                                <!-- buttons-->
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-primary"><i class="fa fa-lock" aria-hidden="true"></i></button>
+                                    <button type="button" class="btn btn-primary active"><i class="fa fa-unlock" aria-hidden="true"></i></button>
+                                </div>
+                                <!-- /buttons-->
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-10 margin-20">
+                                Filters:
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".glas-design">Glas Design</button>
+                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".glas-grid">Glass Grid Type</button>
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".glas-lite">Glass Lite Count</button>
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".sub-family">Sub Family</button>
+                                <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".door-style">Door Style</button>
+                            </div>
+                            <div class="col-md-2 margin-20 clearfix">
+                                <button type="button" class="btn btn-warning btn-xs pull-right" data-toggle="collapse" data-target="#formular" aria-expanded="false" aria-controls="formular"><i class="fa fa-magic" aria-hidden="true"></i> Formular Builder</button>
+                            </div>
+                        </div>
+                        <div class="row collapse" id="formular">
+                            <div class="col-md-12">
+
+                                <div class="row">
+                                    <div class="col-md-12 margin-20">
+                                        <h5>Current Formular</h5>
+                                        <hr>
+
+                                        <button type="button" class="btn btn-sm btn-warning">slab cost</button>
+                                        <button type="button" class="btn btn-sm btn-default">x</button>
+                                        <button type="button" class="btn btn-sm btn-info">slab multi</button>
+
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+
+                                        <button type="button" class="btn btn-sm btn-warning">glass cost</button>
+                                        <button type="button" class="btn btn-sm btn-default">x</button>
+                                        <button type="button" class="btn btn-sm btn-info">glass multi</button>
+
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+
+                                        <button type="button" class="btn btn-sm btn-warning">comp cost</button>
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+                                        <button type="button" class="btn btn-sm btn-info">comp multi</button>
+
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+
+                                        <button type="button" class="btn btn-sm btn-warning">adder cost</button>
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+                                        <button type="button" class="btn btn-sm btn-info">adder multi</button>
+
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+
+                                        <button type="button" class="btn btn-sm btn-warning">frame cost</button>
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+                                        <button type="button" class="btn btn-sm btn-info">frame multi</button>
+
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+
+                                        <button type="button" class="btn btn-sm btn-warning">glazed cost</button>
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+                                        <button type="button" class="btn btn-sm btn-info">glazed multi</button>
+
+                                        <button type="button" class="btn btn-sm btn-default">+</button>
+
+                                        <button type="button" class="btn btn-sm btn-danger">non-stock fee</button>
+                                    </div>
+                                </div>
+                                <div class="row bg">
+                                    <div class="col-md-8 margin-20">
+                                        <h5>Drag and Drop to build your own Formular</h5>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div10" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div11" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div14" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div15" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div16" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div17" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div18" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div19" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div20" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div21" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div22" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div23" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div24" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                                <div id="div25" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 clearfix">
+                                                <button type="button" class="btn btn-success pull-right">save formular</button>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="col-md-4 margin-20">
+                                        <h5>Formelements</h5>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="fomrularelements" ondrop="drop(event)" ondragover="allowDrop(event)">
+                                                    <button type="button" class="btn btn-sm btn-warning" draggable="true" ondragstart="drag(event)" id="slab-cost">slab cost</button>
+                                                    <button type="button" class="btn btn-sm btn-info" draggable="true" ondragstart="drag(event)" id="slab-mult">slab multi</button>
+                                                    <button type="button" class="btn btn-sm btn-warning" draggable="true" ondragstart="drag(event)" id="glass-cost">glass cost</button>
+                                                    <button type="button" class="btn btn-sm btn-info" draggable="true" ondragstart="drag(event)" id="glass-mult">glass multi</button>
+                                                    <button type="button" class="btn btn-sm btn-warning" draggable="true" ondragstart="drag(event)" id="comp-cost">comp cost</button>
+                                                    <button type="button" class="btn btn-sm btn-info" draggable="true" ondragstart="drag(event)" id="comp-mult">comp multi</button>
+                                                    <button type="button" class="btn btn-sm btn-warning" draggable="true" ondragstart="drag(event)" id="adder-cost">adder cost</button>
+                                                    <button type="button" class="btn btn-sm btn-info" draggable="true" ondragstart="drag(event)" id="adder-mult">adder multi</button>
+                                                    <button type="button" class="btn btn-sm btn-warning" draggable="true" ondragstart="drag(event)" id="frame-cost">frame cost</button>
+                                                    <button type="button" class="btn btn-sm btn-info" draggable="true" ondragstart="drag(event)" id="frame-mult">frame multi</button>
+                                                    <button type="button" class="btn btn-sm btn-warning" draggable="true" ondragstart="drag(event)" id="glazed-cost">glazed cost</button>
+                                                    <button type="button" class="btn btn-sm btn-info" draggable="true" ondragstart="drag(event)" id="glazed-mult">glazed multi</button>
+                                                    <button type="button" class="btn btn-sm btn-danger" draggable="true" ondragstart="drag(event)" id="nonstock-fee">non-stock fee</button>
+                                                    <button type="button" class="btn btn-sm btn-default" draggable="true" ondragstart="drag(event)" id="plus">+</button>
+                                                    <button type="button" class="btn btn-sm btn-default" draggable="true" ondragstart="drag(event)" id="minus">-</button>
+                                                    <button type="button" class="btn btn-sm btn-default" draggable="true" ondragstart="drag(event)" id="times">x</button>
+                                                    <button type="button" class="btn btn-sm btn-default" draggable="true" ondragstart="drag(event)" id="devided">/</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 margin-20">
+                                    <h5>Saved Formular 1<i class="fa fa-minus-circle fa-3 pull-right" aria-hidden="true" title="Delete Formular"></i> <i class="fa fa-plus-circle fa-3 pull-right" aria-hidden="true" title="Dublicate Formular"></i></h5>
+                                    <hr>
+                                    <button type="button" class="btn btn-sm btn-warning">slab cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">x</button>
+                                    <button type="button" class="btn btn-sm btn-info">slab multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">glass cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">x</button>
+                                    <button type="button" class="btn btn-sm btn-info">glass multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">comp cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">comp multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">adder cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">adder multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">frame cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">frame multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">glazed cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">glazed multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-danger">non-stock fee</button>
+                                </div>
+                                <div class="col-md-6 margin-20">
+                                    <h5>Saved Formular 2<i class="fa fa-minus-circle fa-3 pull-right" aria-hidden="true" title="Delete Formular"></i> <i class="fa fa-plus-circle fa-3 pull-right" aria-hidden="true" title="Dublicate Formular"></i></h5>
+                                    <hr>
+                                    <button type="button" class="btn btn-sm btn-warning">slab cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">x</button>
+                                    <button type="button" class="btn btn-sm btn-info">slab multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">glass cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">x</button>
+                                    <button type="button" class="btn btn-sm btn-info">glass multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">comp cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">comp multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">adder cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">adder multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">frame cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">frame multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">glazed cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">glazed multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-danger">non-stock fee</button>
+                                </div>
+                                <div class="col-md-6 margin-20">
+                                    <h5>Saved Formular 3<i class="fa fa-minus-circle fa-3 pull-right" aria-hidden="true" title="Delete Formular"></i> <i class="fa fa-plus-circle fa-3 pull-right" aria-hidden="true" title="Dublicate Formular"></i></h5>
+                                    <hr>
+                                    <button type="button" class="btn btn-sm btn-warning">slab cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">x</button>
+                                    <button type="button" class="btn btn-sm btn-info">slab multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">glass cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">x</button>
+                                    <button type="button" class="btn btn-sm btn-info">glass multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">comp cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">comp multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">adder cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">adder multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">frame cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">frame multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">glazed cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">glazed multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-danger">non-stock fee</button>
+                                </div>
+                                <div class="col-md-6 margin-20">
+                                    <h5>Saved Formular 4<i class="fa fa-minus-circle fa-3 pull-right" aria-hidden="true" title="Delete Formular"></i> <i class="fa fa-plus-circle fa-3 pull-right" aria-hidden="true" title="Dublicate Formular"></i></h5>
+                                    <hr>
+                                    <button type="button" class="btn btn-sm btn-warning">slab cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">x</button>
+                                    <button type="button" class="btn btn-sm btn-info">slab multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">glass cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">x</button>
+                                    <button type="button" class="btn btn-sm btn-info">glass multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">comp cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">comp multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">adder cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">adder multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">frame cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">frame multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-warning">glazed cost</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-info">glazed multi</button>
+                                    <button type="button" class="btn btn-sm btn-default">+</button>
+                                    <button type="button" class="btn btn-sm btn-danger">non-stock fee</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert edit alert-dismissible col-md-1" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Filter 1</div>
+                                <div class="alert edit alert-dismissible col-md-1" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Filter 3</div>
+                                <div class="alert edit alert-dismissible col-md-1" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Filter 9</div>
+                                <div class="alert edit alert-dismissible col-md-1" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Filter 11</div>
+                                <div class="alert edit alert-dismissible col-md-1" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Filter 12</div>
+                                <div class="alert edit alert-dismissible col-md-1" role="alert"> <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Filter 21</div>
+                            </div>
+                        </div>
+                        <!-- Table -->
+                        <table class="table table-striped parent">
+                            <thead>
+                            <tr>
+                                <th colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoorGlasSlab-1" aria-expanded="false"><i class="fa fa-angle-double-down closed" title="expand all"></i><i class="fa fa-angle-double-down
+                    fa-flip-vertical open" title="collapse all"></i></a>Family / CCN / SPN / PBC</th>
+                                <th class="col-md-1">Cost</th>
+                                <th class="col-md-1">Component</th>
+                                <th class="col-md-1">Adder</th>
+                                <th class="col-md-1">Dealer Margin</th>
+                                <th class="col-md-1">Distributor Margin</th>
+                                <th class="col-md-1">Multiplier</th>
+                                <th class="col-md-1">List Price</th>
+                                <th class="col-md-1">Stock Status</th>
+                                <th class="col-md-1">Formular</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- first row start -->
+                            <tr class="edit">
+                                <td colspan="12"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoor,#BarringtonDoor-SPN,#BarringtonDoorGlasSlab-1" aria-expanded="false"><i class="fa fa-angle-double-down closed" title="expand all"></i><i class="fa fa-angle-double-down fa-flip-vertical open" title="collapse all"></i></a>
+                                    <a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoor" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>Barrington
+                                    Door
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow no-padding">
+                                    <div class="accordian-body collapse subfamily" id="BarringtonDoor">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="12" class="no-padding">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoor-SPN" aria-expanded="false"><i class="fa fa-angle-double-down closed" title="expand all"></i><i class="fa fa-angle-double-down fa-flip-vertical open" title="collapse all"></i></a>
+                                                                <a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoor-SPN" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>Catalog
+                                                                Code 8958</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">48.53</td>
+
+                                                            <td class="col-md-1">30.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">896.00</td>
+                                                            <td class="col-md-1">
+                                                                <span class="stock btn-block">stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+
+                                                        <!-- first nested level start -->
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonDoor-SPN">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+
+                                                                                    <tr>
+                                                                                        <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoorGlasSlab-1" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLS-DR-106-338-X-2-80-36
+                                                                                            <!-- <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".smartpartnumber"><span class="fa fa-question-circle" aria-hidden="true"></span></button> -->
+                                                                                            <i class="fa fa-question-circle" aria-hidden="true" data-toggle="modal" data-target=".smartpartnumber"></i>
+                                                                                        </td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1">48.53</td>
+
+                                                                                        <td class="col-md-1">30.00</td>
+                                                                                        <td class="col-md-1">40%</td>
+                                                                                        <td class="col-md-1">40%</td>
+                                                                                        <td class="col-md-1">3.33</td>
+                                                                                        <td class="col-md-1">896.00</td>
+                                                                                        <td class="col-md-1">
+                                                                                            <span class="stock btn-block">stock</span>
+                                                                                        </td>
+                                                                                        <td class="col-md-1 formular">
+                                                                                            <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                                                <option>-Formular-</option>
+                                                                                                <option>Formular 1</option>
+                                                                                                <option>Formular 2</option>
+                                                                                                <option>Formular 3</option>
+                                                                                                <option>Formular 4</option>
+                                                                                            </select>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <!-- second nested level start -->
+                                                                                    <tr>
+                                                                                        <td colspan="12" class="hiddenRow no-padding">
+                                                                                            <div class="accordian-body collapse subsubfamily" id="BarringtonDoorGlasSlab-1">
+                                                                                                <table class="table table-striped">
+                                                                                                    <tbody>
+                                                                                                    <tr>
+                                                                                                        <td colspan="12" class="no-padding">
+                                                                                                            <table class="table table-striped">
+                                                                                                                <tbody>
+                                                                                                                <tr class="no-bg">
+                                                                                                                    <td colspan="3" class="col-md-3 subsubfamily">Slab: BLS--6-3068</td>
+                                                                                                                    <td class="col-md-1">74.09</td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                </tr>
+                                                                                                                <tr class="no-bg">
+                                                                                                                    <td colspan="3" class="subsubfamily">Glas: 77DDP106-033800-SYS</td>
+                                                                                                                    <td class="col-md-1">193.51</td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <!-- second nested level end -->
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- first nested level end -->
+
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoor-SPN1" aria-expanded="false"><i class="fa fa-angle-double-down closed" title="expand all"></i><i class="fa fa-angle-double-down fa-flip-vertical open" title="collapse all"></i><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>                                        Catalog Code 5678</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">48.53</td>
+
+                                                            <td class="col-md-1">30.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">896.00</td>
+                                                            <td class="col-md-1">
+                                                                <span class="stock btn-block">stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+
+                                                        <!-- first nested level start -->
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonDoor-SPN1">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+
+                                                                                    <tr>
+                                                                                        <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoorGlasSlab-2" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLS-DR-106-338-X-2-80-36
+                                                                                            <!-- <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".smartpartnumber"><span class="fa fa-question-circle" aria-hidden="true"></span></button> -->
+                                                                                            <i class="fa fa-question-circle" aria-hidden="true" data-toggle="modal" data-target=".smartpartnumber"></i>
+                                                                                        </td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1">48.53</td>
+
+                                                                                        <td class="col-md-1">30.00</td>
+                                                                                        <td class="col-md-1">40%</td>
+                                                                                        <td class="col-md-1">40%</td>
+                                                                                        <td class="col-md-1">3.33</td>
+                                                                                        <td class="col-md-1">896.00</td>
+                                                                                        <td class="col-md-1">
+                                                                                            <span class="stock btn-block">stock</span>
+                                                                                        </td>
+                                                                                        <td class="col-md-1 formular">
+                                                                                            <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                                                <option>-Formular-</option>
+                                                                                                <option>Formular 1</option>
+                                                                                                <option>Formular 2</option>
+                                                                                                <option>Formular 3</option>
+                                                                                                <option>Formular 4</option>
+                                                                                            </select>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <!-- second nested level start -->
+                                                                                    <tr>
+                                                                                        <td colspan="12" class="hiddenRow no-padding">
+                                                                                            <div class="accordian-body collapse subsubfamily" id="BarringtonDoorGlasSlab-2">
+                                                                                                <table class="table table-striped">
+                                                                                                    <tbody>
+                                                                                                    <tr>
+                                                                                                        <td colspan="12" class="no-padding">
+                                                                                                            <table class="table table-striped">
+                                                                                                                <tbody>
+                                                                                                                <tr class="no-bg">
+                                                                                                                    <td colspan="3" class="col-md-3 subsubfamily">Slab: BLS--6-3068</td>
+                                                                                                                    <td class="col-md-1">74.09</td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                </tr>
+                                                                                                                <tr class="no-bg">
+                                                                                                                    <td colspan="3" class="subsubfamily">Glas: 77DDP106-033800-SYS</td>
+                                                                                                                    <td class="col-md-1">193.51</td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <!-- second nested level end -->
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- first nested level end -->
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoor-SPN3" aria-expanded="false"><i class="fa fa-angle-double-down closed" title="expand all"></i><i class="fa fa-angle-double-down fa-flip-vertical open" title="collapse all"></i><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>                                        Catalog Code 5878</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">48.53</td>
+
+                                                            <td class="col-md-1">30.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">896.00</td>
+                                                            <td class="col-md-1">
+                                                                <span class="stock btn-block">stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+
+                                                        <!-- first nested level start -->
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonDoor-SPN3">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+
+                                                                                    <tr>
+                                                                                        <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoorGlasSlab-3" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLS-DR-106-338-X-2-80-36
+                                                                                            <!-- <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".smartpartnumber"><span class="fa fa-question-circle" aria-hidden="true"></span></button> -->
+                                                                                            <i class="fa fa-question-circle" aria-hidden="true" data-toggle="modal" data-target=".smartpartnumber"></i>
+                                                                                        </td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1">48.53</td>
+
+                                                                                        <td class="col-md-1">30.00</td>
+                                                                                        <td class="col-md-1">40%</td>
+                                                                                        <td class="col-md-1">40%</td>
+                                                                                        <td class="col-md-1">3.33</td>
+                                                                                        <td class="col-md-1">896.00</td>
+                                                                                        <td class="col-md-1">
+                                                                                            <span class="stock btn-block">stock</span>
+                                                                                        </td>
+                                                                                        <td class="col-md-1 formular">
+                                                                                            <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                                                <option>-Formular-</option>
+                                                                                                <option>Formular 1</option>
+                                                                                                <option>Formular 2</option>
+                                                                                                <option>Formular 3</option>
+                                                                                                <option>Formular 4</option>
+                                                                                            </select>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <!-- second nested level start -->
+                                                                                    <tr>
+                                                                                        <td colspan="12" class="hiddenRow no-padding">
+                                                                                            <div class="accordian-body collapse subsubfamily" id="BarringtonDoorGlasSlab-3">
+                                                                                                <table class="table table-striped">
+                                                                                                    <tbody>
+                                                                                                    <tr>
+                                                                                                        <td colspan="12" class="no-padding">
+                                                                                                            <table class="table table-striped">
+                                                                                                                <tbody>
+                                                                                                                <tr class="no-bg">
+                                                                                                                    <td colspan="3" class="col-md-3 subsubfamily">Slab: BLS--6-3068</td>
+                                                                                                                    <td class="col-md-1">74.09</td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                </tr>
+                                                                                                                <tr class="no-bg">
+                                                                                                                    <td colspan="3" class="subsubfamily">Glas: 77DDP106-033800-SYS</td>
+                                                                                                                    <td class="col-md-1">193.51</td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <!-- second nested level end -->
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- first nested level end -->
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoor-SPN4" aria-expanded="false"><i class="fa fa-angle-double-down closed" title="expand all"></i><i class="fa fa-angle-double-down fa-flip-vertical open" title="collapse all"></i><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>                                        Catalog Code 7844</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">48.53</td>
+
+                                                            <td class="col-md-1">30.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">896.00</td>
+                                                            <td class="col-md-1">
+                                                                <span class="stock btn-block">stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+
+                                                        <!-- first nested level start -->
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonDoor-SPN4">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+
+                                                                                    <tr>
+                                                                                        <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonDoorGlasSlab-4" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLS-DR-106-338-X-2-80-36
+                                                                                            <!-- <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".smartpartnumber"><span class="fa fa-question-circle" aria-hidden="true"></span></button> -->
+                                                                                            <i class="fa fa-question-circle" aria-hidden="true" data-toggle="modal" data-target=".smartpartnumber"></i>
+                                                                                        </td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1">48.53</td>
+
+                                                                                        <td class="col-md-1">30.00</td>
+                                                                                        <td class="col-md-1">40%</td>
+                                                                                        <td class="col-md-1">40%</td>
+                                                                                        <td class="col-md-1">3.33</td>
+                                                                                        <td class="col-md-1">896.00</td>
+                                                                                        <td class="col-md-1">
+                                                                                            <span class="stock btn-block">stock</span>
+                                                                                        </td>
+                                                                                        <td class="col-md-1 formular">
+                                                                                            <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                                                <option>-Formular-</option>
+                                                                                                <option>Formular 1</option>
+                                                                                                <option>Formular 2</option>
+                                                                                                <option>Formular 3</option>
+                                                                                                <option>Formular 4</option>
+                                                                                            </select>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <!-- second nested level start -->
+                                                                                    <tr>
+                                                                                        <td colspan="12" class="hiddenRow no-padding">
+                                                                                            <div class="accordian-body collapse subsubfamily" id="BarringtonDoorGlasSlab-4">
+                                                                                                <table class="table table-striped">
+                                                                                                    <tbody>
+                                                                                                    <tr>
+                                                                                                        <td colspan="12" class="no-padding">
+                                                                                                            <table class="table table-striped">
+                                                                                                                <tbody>
+                                                                                                                <tr class="no-bg">
+                                                                                                                    <td colspan="3" class="col-md-3 subsubfamily">Slab: BLS--6-3068</td>
+                                                                                                                    <td class="col-md-1">74.09</td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                </tr>
+                                                                                                                <tr class="no-bg">
+                                                                                                                    <td colspan="3" class="subsubfamily">Glas: 77DDP106-033800-SYS</td>
+                                                                                                                    <td class="col-md-1">193.51</td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                    <td class="col-md-1"></td>
+                                                                                                                </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    </tbody>
+                                                                                                </table>
+                                                                                            </div>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <!-- second nested level end -->
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- first nested level end -->
+
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- first row end -->
+
+                            <tr class="no-bg">
+                                <td colspan="12"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonSidelite" aria-expanded="false"><i class="fa fa-angle-double-down closed" title="expand all"></i><i class="fa fa-angle-double-down fa-flip-vertical open" title="collapse all"></i><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>Barrington
+                                    Sidelite
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="12" class="hiddenRow no-padding">
+                                    <div class="accordian-body collapse subfamily" id="BarringtonSidelite">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                            <tr>
+                                                <td colspan="12" class="no-padding">
+                                                    <table class="table table-striped">
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonSideliteGlasSlab-1" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLC-SL-129-010-CC-0-01-0-0-X-X-X-1/2-1/2-68-12-X-WE</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">48.53</td>
+
+                                                            <td class="col-md-1">30.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">896.00</td>
+                                                            <td class="col-md-1">
+                                                                <button type="button" class="btn btn-default btn-xs btn-block stock">stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonSideliteGlasSlab-1">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="col-md-3 subsubfamily">Slab: BLS--6-3068</td>
+                                                                                        <td class="col-md-1">74.09</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="subsubfamily">Glas: 77DDP106-033800-SYS</td>
+                                                                                        <td class="col-md-1">193.51</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonSideliteFactoryGlazed-1" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLC-DR-106-328-X-2-80-36</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">55.28</td>
+                                                            <td class="col-md-1">40.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">900.00</td>
+                                                            <td class="col-md-1">
+                                                                <span class="non-stock btn-block">non-stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonSideliteFactoryGlazed-1">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="col-md-3 subsubfamily">Factory Glazed: BLC-106-338-6-2868</td>
+                                                                                        <td class="col-md-1">973.01</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonSideliteGlasSlab-2" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLS-DR-106-338-X-2-80-36</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">48.53</td>
+
+                                                            <td class="col-md-1">30.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">896.00</td>
+                                                            <td class="col-md-1">
+                                                                <button type="button" class="btn btn-default btn-xs btn-block stock">stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonSideliteGlasSlab-2">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="col-md-3 subsubfamily">Slab: BLS--6-3068</td>
+                                                                                        <td class="col-md-1">74.09</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="subsubfamily">Glas: 77DDP106-033800-SYS</td>
+                                                                                        <td class="col-md-1">193.51</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonSideliteFactoryGlazed-2" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLC-DR-106-328-X-2-80-36</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">55.28</td>
+                                                            <td class="col-md-1">40.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">900.00</td>
+                                                            <td class="col-md-1">
+                                                                <span class="non-stock btn-block">non-stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonSideliteFactoryGlazed-2">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="col-md-3 subsubfamily">Factory Glazed: BLC-106-338-6-2868</td>
+                                                                                        <td class="col-md-1">973.01</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonSideliteGlasSlab-3" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLS-DR-106-338-X-2-80-36</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">48.53</td>
+                                                            <td class="col-md-1">30.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">896.00</td>
+                                                            <td class="col-md-1">
+                                                                <button type="button" class="btn btn-default btn-xs btn-block stock">stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonSideliteGlasSlab-3">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="col-md-3 subsubfamily">Slab: BLS--6-3068</td>
+                                                                                        <td class="col-md-1">74.09</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="subsubfamily">Glas: 77DDP106-033800-SYS</td>
+                                                                                        <td class="col-md-1">193.51</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3"><a aria-hidden="true" data-toggle="collapse" data-target="#BarringtonSideliteFactoryGlazed-3" aria-expanded="false"><i class="fa fa-angle-down closed" title="expand one"></i><i class="fa fa-angle-down fa-flip-vertical open" title="collapse one"></i></a>FG-BLC-DR-106-328-X-2-80-36</td>
+                                                            <td class="col-md-1"></td>
+                                                            <td class="col-md-1">55.28</td>
+                                                            <td class="col-md-1">40.00</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">40%</td>
+                                                            <td class="col-md-1">3.33</td>
+                                                            <td class="col-md-1">900.00</td>
+                                                            <td class="col-md-1">
+                                                                <span class="non-stock btn-block">non-stock</span>
+                                                            </td>
+                                                            <td class="col-md-1 formular">
+                                                                <select class="selectpicker show-tick" data-width="100%" data-live-search="true">
+                                                                    <option>-Formular-</option>
+                                                                    <option>Formular 1</option>
+                                                                    <option>Formular 2</option>
+                                                                    <option>Formular 3</option>
+                                                                    <option>Formular 4</option>
+                                                                </select>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="12" class="hiddenRow no-padding">
+                                                                <div class="accordian-body collapse subfamily" id="BarringtonSideliteFactoryGlazed-3">
+                                                                    <table class="table table-striped">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td colspan="12" class="no-padding">
+                                                                                <table class="table table-striped">
+                                                                                    <tbody>
+                                                                                    <tr class="no-bg">
+                                                                                        <td colspan="3" class="col-md-3 subsubfamily">Factory Glazed: BLC-106-338-6-2868</td>
+                                                                                        <td class="col-md-1">973.01</td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                        <td class="col-md-1"></td>
+                                                                                    </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+    <!-- /#container-fluid -->
+</div>
+<!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+</body>
+
+</html>
